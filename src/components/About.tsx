@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Title } from "./ui/Title";
+import { CustomLink } from "./ui/CustomLink";
 
 export const About = () => {
   return (
-    <div>
-      <h1>About</h1>
-      <Link to="/">Home</Link>
-    </div>
+    <>
+      <Title title="About" />
+      <CustomLink to="/" label="Home" />
+    </>
   );
 };

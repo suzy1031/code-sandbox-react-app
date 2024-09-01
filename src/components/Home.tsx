@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../redux/store";
 import { decrease, increase } from "../redux/slice/counter";
+import { Title } from "./ui/Title";
+import { CustomLink } from "./ui/CustomLink";
 
 export const Home = () => {
   // 自作したhookを使う react-reduxのhookを使うと、callbackが型エラーする
@@ -8,11 +9,11 @@ export const Home = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div style={{ width: "100%" }}>
-      <h1>Home</h1>
-      <Link to="/about">About</Link>
+    <div>
+      <Title title="Home" />
+      <CustomLink to="/about" label="About" />
       <br />
-      <Link to="/photos">Photos</Link>
+      <CustomLink to="/photos" label="Photos" />
       <div>{count}</div>
       <button onClick={() => dispatch(increase())}>UP</button>
       <button onClick={() => dispatch(decrease())}>DOWN</button>
